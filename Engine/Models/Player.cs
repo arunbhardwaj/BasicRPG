@@ -74,11 +74,12 @@ namespace Engine.Models
 
         public Player()
         {
+            /*
             this.hp = 10;
             this.xp = 0;
             this.level = 1;
             this.gold = 25;
-            
+            */
         }
 
     }

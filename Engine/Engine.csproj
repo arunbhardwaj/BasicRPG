@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="BasePropertyChangedEventClass.cs" />
     <Compile Include="Factories\WorldFactory.cs" />
+    <Compile Include="Models\GameItem.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Player.cs" />
     <Compile Include="Models\World.cs" />
