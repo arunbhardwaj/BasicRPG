@@ -7,6 +7,11 @@
         mc:Ignorable="d"
         FontSize="10pt"
         Title="RPG" Height="768" Width="1024">
+
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibility" />
+    </Window.Resources>
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -53,7 +58,7 @@
             <Label Grid.Row="4" Grid.Column="1" Content="{Binding CurrentPlayer.xp}" />
             <Label Grid.Row="5" Grid.Column="0" Content="Level:" />
             <Label Grid.Row="5" Grid.Column="1" Content="{Binding CurrentPlayer.level}" />
-            <Button Grid.Row="6" Grid.Column="1" Content=" Add XP " Click="ButtonXP_OnClick" ToolTip="Add XP to your Character!" />
+            
         </Grid>
         
         <!-- Game Data Section -->
@@ -92,7 +97,8 @@
 
                     <TextBlock Grid.Row="2"
                                HorizontalAlignment="Center"
-                               Text="{Binding CurrentLocation.Description}" />
+                               Text="{Binding CurrentLocation.Description}"
+                               TextWrapping="WrapWithOverflow"/>
 
 
                 </Grid>
@@ -124,13 +130,17 @@
                 </Grid.ColumnDefinitions>
 
                 <Button Grid.Row="0" Grid.Column="1" Content="North" Height="30" Width="60" Margin="10"
-                        Click="OnClick_MoveNorth"/>
+                        Click="OnClick_MoveNorth"
+                        Visibility="{Binding hasNorth, Converter={StaticResource BooleanToVisibility}}" />
                 <Button Grid.Row="1" Grid.Column="0" Content="West" Height="30" Width="60" Margin="10"
-                        Click="OnClick_MoveWest"/>
+                        Click="OnClick_MoveWest"
+                        Visibility="{Binding hasWest, Converter={StaticResource BooleanToVisibility}}" />
                 <Button Grid.Row="1" Grid.Column="2" Content="East" Height="30" Width="60" Margin="10"
-                        Click="OnClick_MoveEast"/>
+                        Click="OnClick_MoveEast"
+                        Visibility="{Binding hasEast, Converter={StaticResource BooleanToVisibility}}" />
                 <Button Grid.Row="2" Grid.Column="1" Content="South" Height="30" Width="60" Margin="10"
-                        Click="OnClick_MoveSouth"/>
+                        Click="OnClick_MoveSouth"
+                        Visibility="{Binding hasSouth, Converter={StaticResource BooleanToVisibility}}" />
             </Grid>
             
         </Grid>
