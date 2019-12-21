@@ -86,7 +86,7 @@ namespace Engine.ViewModels
            
             CurrentWorld = WorldFactory.createWorld();
             CurrentLocation = CurrentWorld.LocationAt(0, -1);
-
+            
 
         }
 

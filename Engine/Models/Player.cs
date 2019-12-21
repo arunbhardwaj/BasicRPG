@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
+using System.Collections.ObjectModel;
 
 namespace Engine.Models
 {
@@ -72,6 +73,9 @@ namespace Engine.Models
             }
         }
 
+        //ObservableCollections automatically handles notifications when something gets changed.
+        public ObservableCollection<GameItem> Inventory { get; set; }
+
         public Player()
         {
             /*
@@ -80,7 +84,11 @@ namespace Engine.Models
             this.level = 1;
             this.gold = 25;
             */
+
+            //Instantiate a new inventory to the player.
+            Inventory = new ObservableCollection<GameItem>();
         }
 
+        
     }
 }
