@@ -20,6 +20,8 @@ namespace Engine.Factories
             _gameItems = new List<GameItem>();
             _gameItems.Add(new Weapon(1001, "Sharp Stick", 1, 1, 2));
             _gameItems.Add(new Weapon(1002, "Rusty Broken Sword", 5, 1, 3));
+            _gameItems.Add(new GameItem(2001, "Snake Fang", 5));
+            _gameItems.Add(new GameItem(2002, "Snakeskin", 2)); 
         }
 
         public static GameItem CreateGameItem(int itemTypeID)
