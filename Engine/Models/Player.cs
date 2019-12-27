@@ -75,6 +75,8 @@ namespace Engine.Models
 
         //ObservableCollections automatically handles notifications when something gets changed.
         public ObservableCollection<GameItem> Inventory { get; set; }
+        public ObservableCollection<QuestStatus> Quests { get; set; }
+
 
         public Player()
         {
@@ -87,6 +89,7 @@ namespace Engine.Models
 
             //Instantiate a new inventory to the player.
             Inventory = new ObservableCollection<GameItem>();
+            Quests = new ObservableCollection<QuestStatus>();
         }
 
         

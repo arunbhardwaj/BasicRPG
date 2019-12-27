@@ -55,6 +55,7 @@ namespace Engine.ViewModels
             {
                 _currentLocation = value;
                 OnPropertyChanged(nameof(CurrentLocation));
+                GivePlayerQuestsAtLocation();
 
                 //We have to update the boolean values for the UI visibility of the movement controls. They only need updating if the CurrentLocation changes.
                 OnPropertyChanged(nameof(hasNorth));
@@ -123,6 +124,28 @@ namespace Engine.ViewModels
             }
         }
 
-        
+        public void GivePlayerQuestsAtLocation()
+        {
+            if (CurrentLocation.QuestsAvailableHere != null)
+            {
+                foreach (Quest quest in _currentLocation.QuestsAvailableHere) 
+                {
+                    if (!CurrentPlayer.Quests.Any(q => q.PlayerQuest.ID == quest.ID))
+                    {
+                        CurrentPlayer.Quests.Add(new QuestStatus(quest));
+                    }
+                    
+                    
+                    
+                    /* first implementation (does not use LINQ);
+                    QuestStatus currentQuest = new QuestStatus(quest);
+                    if (!CurrentPlayer.Quests.Contains(currentQuest))
+                    {
+                        CurrentPlayer.Quests.Add(new QuestStatus(quest));
+                    }
+                    */
+                }
+            }
+        }
     }
 }

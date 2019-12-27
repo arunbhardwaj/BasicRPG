@@ -28,6 +28,7 @@ namespace Engine.Factories
         {
             //LINQ to find the first item that matches the one we passed through using predicates/lambdas.
             GameItem gameItem = _gameItems.FirstOrDefault(item => item.ItemTypeID == itemTypeID);
+           
             //In order to allow for modified unique items, we need to create a copy of the standard item.
             if (gameItem != null)
             {

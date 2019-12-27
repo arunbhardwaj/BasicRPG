@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Engine.Models
 {
-    class Quest
+    /* Still need to figure out when to assign quests. First, tie them to locations upon being visited, and then 
+     * we can assign them to NPC's and create a quest system?
+     */
+    public class Quest
     {
         public int ID { get; set; }
         public string Name { get; set; }
